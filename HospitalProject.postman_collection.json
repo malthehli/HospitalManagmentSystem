@@ -1,0 +1,426 @@
+{
+	"info": {
+		"_postman_id": "0d0a0d3b-6523-4154-be28-f98d63684118",
+		"name": "HospitalProject",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Doctors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/doctors",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"doctors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Doctors in Department",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:8080/departments/30001/doctors",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"departments",
+						"30001",
+						"doctors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get appointements in doctor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/doctors/5000001/appointements",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"doctors",
+						"5000001",
+						"appointements"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get appointements in patient",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/patients/101/appointements",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"patients",
+						"101",
+						"appointements"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get payments in patient",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/patients/104/payments",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"patients",
+						"104",
+						"payments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Doctors In Schedule",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/schedules/400006/doctors",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"schedules",
+						"400006",
+						"doctors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Departments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/departments",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"departments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Patients",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/patients",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"patients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Schedules",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/schedules",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"schedules"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Payment",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/payments",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"payments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get appointments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/appointments",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"appointments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Patient",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n        \"pat_id\": 108,\r\n        \"pat_name\": \"Khalid\",\r\n        \"pat_phone\": 567778989,\r\n        \"pat_dob\": \"2001-11-11\",\r\n        \"pat_gender\": \"M\"\r\n   }"
+				},
+				"url": {
+					"raw": "localhost:8080/patients",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"patients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Appointment to doctor and patient",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"app_id\" : 60000008,\r\n    \"app_room\": \"B322\",\r\n    \"app_date\": \"2022-11-10\",\r\n    \"app_time\": \"08:00:00\",\r\n    \"app_reason\": \"Nose Surgery\",\r\n    \"pat_id\" : 108,\r\n    \"doc_id\" : 5000001\r\n\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/appointments/5000001/108",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"appointments",
+						"5000001",
+						"108"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Payment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"pay_id\": 2007,\r\n        \"pay_method\": \"Cash\",\r\n        \"pay_date\": \"2022-10-19\",\r\n        \"pay_amount\": 850.0,\r\n        \"pat_id\" : 107\r\n    }"
+				},
+				"url": {
+					"raw": "localhost:8080/payments",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"payments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Doctor to Department",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\"doc_id\": 5000007,\r\n        \"doc_name\": \"Ayesha Alhammadi\",\r\n        \"doc_phone\": 509461122,\r\n        \"doc_gender\": \"F\",\r\n        \"dep_id\" : \"30001\",\r\n        \"sch_id\" : \"400002\"\r\n   }"
+				},
+				"url": {
+					"raw": "localhost:8080/doctors/30001/400002",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"doctors",
+						"30001",
+						"400002"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put doctor",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"doc_id\": 5000007,\r\n        \"doc_name\": \"Ayesha Alhammadi\",\r\n        \"doc_phone\": 509461123,\r\n        \"doc_gender\": \"F\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/doctors/5000007",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"doctors",
+						"5000007"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update patient",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    {\r\n        \"pat_id\": 101,\r\n        \"pat_name\": \"Rashid\",\r\n        \"pat_phone\": 505260567,\r\n        \"pat_dob\": \"2004-07-23\",\r\n        \"pat_gender\": \"M\"\r\n    }"
+				},
+				"url": {
+					"raw": "localhost:8080/patients/101",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"patients",
+						"101"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Appointment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \r\n        \"app_room\": \"A131\",\r\n        \"app_date\": \"2022-11-16\",\r\n        \"app_time\": \"10:40:00\",\r\n        \"app_reason\": \"Eye Lasik\"\r\n    }"
+				},
+				"url": {
+					"raw": "localhost:8080/appointments",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"appointments"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
